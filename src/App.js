@@ -26,8 +26,14 @@ export default class App extends Component {
     return (
       <div className="App">
         {movies.map(item => {
-          return <h1>{item.title}</h1>
-        })}
+          return (
+            <div>
+              <h1>{item.title}</h1>
+              <img src={item.poster} alt={item.title} />
+            </div>
+            
+          )})}
+
         
       </div>
     )
