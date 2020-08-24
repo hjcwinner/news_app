@@ -18,8 +18,8 @@ const Poster = ({poster, alt}) => {
 };
 
 Poster.propTypes = {
-    poster : propTypes.string.isRequired,
-    alt : propTypes.string
+    poster : PropTypes.string.isRequired,
+    alt : PropTypes.string
 };
 
 export default Poster;
