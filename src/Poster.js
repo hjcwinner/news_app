@@ -13,7 +13,7 @@ import PropTypes from 'prop-types';
 
 const Poster = ({poster, alt}) => {
     return (
-       <img src={poster} alt={alt} />
+       <img src={`https://image.tmdb.org/t/p/w300${poster}`} alt={alt} />
     );
 };
 

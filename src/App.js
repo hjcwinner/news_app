@@ -24,19 +24,22 @@ export default class App extends Component {
 
   renderMovies = () => {
     const movies = this.state.movies.map((movie, index) => {
-      return <Movie title={movie.title} poster={movie.poster} key={index} />
+      return <Movie title={movie.title} poster={movie.poster_path} key={index} />
     })
     return movies
   }
 
   getmovies = async() => {
-    this.callapi()
+    const results = await this.callapi()
+    this.setState({
+      movies: results
+    })
   }
 
   callapi = () => {
-    return fetch("http://newsapi.org/v2/everything?q=bitcoin&from=2020-07-24&sortBy=publishedAt&apiKey=51bb0125448e42c7b90700544eca7361")
+    return fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=8597e491ed6e80f0de12e349eb60ea6e&language=en-US&page=1")
     .then(data => data.json())
-    .then(json => console.log(json.articles))
+    .then(json => json.results)
     .catch(err => console.log(err))
   }
 
