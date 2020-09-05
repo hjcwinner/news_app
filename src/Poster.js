@@ -10,10 +10,11 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import './movie.css'
 
 const Poster = ({poster, alt}) => {
     return (
-       <img src={`https://image.tmdb.org/t/p/w300${poster}`} alt={alt} />
+       <img src={`https://image.tmdb.org/t/p/w200${poster}`} alt={alt} className="Movie__Poster"/>
     );
 };
 

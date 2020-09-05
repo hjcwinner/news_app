@@ -24,7 +24,7 @@ export default class App extends Component {
 
   renderMovies = () => {
     const movies = this.state.movies.map((movie, index) => {
-      return <Movie title={movie.title} poster={movie.poster_path} key={index} />
+      return <Movie title={movie.title} poster={movie.poster_path} key={index} genres={movie.genre_ids} synopsis={movie.overview} />
     })
     return movies
   }
